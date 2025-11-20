@@ -28,3 +28,4 @@ INSERT INTO words (word, definition, difficulty_level) VALUES
 ('perseverance', 'Continued effort despite difficulties', 'Advanced'),
 ('library', 'A place where books are kept for reading', 'Beginner'),
 ('collaborate', 'To work together with others', 'Intermediate');
+
