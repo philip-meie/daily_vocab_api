@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
-from typing import List
+from typing import List, Dict
 
 
 class WordResponse(BaseModel):
@@ -29,7 +29,7 @@ class SummaryResponse(BaseModel):
     total_practices: int
     average_score: float
     total_words_practiced: int
-    level_distribution: dict
+    level_distribution: Dict[str, int]
 
 
 class HistoryItem(BaseModel):
