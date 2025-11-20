@@ -48,3 +48,4 @@ def validate_sentence(
         suggestion=ai_result["suggestion"],
         corrected_sentence=ai_result["corrected_sentence"]
     )
+    
