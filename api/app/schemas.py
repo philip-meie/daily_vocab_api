@@ -42,3 +42,4 @@ class HistoryItem(BaseModel):
 
     class Config:
         from_attributes = True
+
