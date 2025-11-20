@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, Text, DECIMAL, TIMESTAMP, Enum as SQLEnum
+from sqlalchemy import Column, Integer, String, Text, DECIMAL, TIMESTAMP, Float, ForeignKey, Enum as SQLEnum
 from datetime import datetime
+
 from app.database import Base
 
 
@@ -18,11 +19,14 @@ class Word(Base):
 
 class PracticeSession(Base):
     __tablename__ = "practice_sessions"
-    
+
     id = Column(Integer, primary_key=True, index=True)
-    word_id = Column(Integer, nullable=False)
-    user_sentence = Column(Text, nullable=False)
-    score = Column(DECIMAL(3, 1))
-    feedback = Column(Text)
-    corrected_sentence = Column(Text)
-    practiced_at = Column(TIMESTAMP, default=datetime.utcnow)
+    user_id = Column(Integer, nullable=False)
+    word_id = Column(Integer, ForeignKey("words.id"), nullable=False)
+
+    submitted_sentence = Column(String(255), nullable=False)
+    score = Column(DECIMAL(3, 1), nullable=False)
+    feedback = Column(Text, nullable=False)
+    corrected_sentence = Column(String(255), nullable=False)
+
+    created_at = Column(TIMESTAMP, default=datetime.utcnow)
