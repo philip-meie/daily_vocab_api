@@ -21,4 +21,3 @@ def get_random_word(db: Session = Depends(get_db)):
         )
     random_word = random.choice(words)
     return random_word 
-
