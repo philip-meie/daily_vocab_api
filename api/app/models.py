@@ -30,3 +30,4 @@ class PracticeSession(Base):
     corrected_sentence = Column(String(255), nullable=False)
 
     created_at = Column(TIMESTAMP, default=datetime.utcnow)
+    
