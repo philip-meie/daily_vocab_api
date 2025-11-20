@@ -67,3 +67,4 @@ def get_history(limit: int = 10, db: Session = Depends(get_db)):
         )
 
     return history
+
